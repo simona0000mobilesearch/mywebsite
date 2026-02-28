@@ -7,39 +7,79 @@
     body { 
       font-family: Arial, sans-serif; 
       text-align: center; 
-      margin-top: 80px; 
+      margin: 0;
+      padding: 40px 20px;
       background-color: #f4f6f9;
     }
-    h1 { margin-bottom: 30px; }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
     button { 
-      padding: 15px 30px; 
-      font-size: 18px; 
+      padding: 12px 25px; 
+      font-size: 16px; 
       cursor: pointer; 
       background-color: #0088cc; 
       color: white; 
       border: none; 
       border-radius: 8px;
+      margin-top: 15px;
     }
+
     button:hover {
-      background-color: #0077b6;
+      opacity: 0.9;
     }
-    .qr {
-      margin-top: 40px;
+
+    img {
+      margin-top: 20px;
+      border-radius: 12px;
     }
+
+    .threema { background-color: #3fe669; color: black; }
+    .session { background-color: #6f42c1; }
+
   </style>
 </head>
 <body>
 
-  <h1>Свяжитесь с нами в Telegram</h1>
+  <h1>Свяжитесь с нами</h1>
 
-  <button onclick="window.location.href='https://t.me/simona0000';">
-    Написать в Telegram
-  </button>
+  <!-- Telegram -->
+  <div class="section">
+    <h2>Telegram</h2>
+    <button onclick="window.location.href='https://t.me/simona0000';">
+      Написать в Telegram
+    </button>
+    <br>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://t.me/simona0000" 
+         alt="QR Telegram">
+  </div>
 
-  <div class="qr">
-    <h2>Или отсканируйте QR-код:</h2>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://t.me/simona0000" 
-         alt="QR код Telegram">
+  <!-- Threema -->
+  <div class="section">
+    <h2>Threema</h2>
+    <button class="threema" onclick="window.location.href='https://threema.id/CK3V9UWX';">
+      Открыть Threema
+    </button>
+    <br>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://threema.id/CK3V9UWX" 
+         alt="QR Threema">
+  </div>
+
+  <!-- Session -->
+  <div class="section">
+    <h2>Session</h2>
+    <button class="session" onclick="navigator.clipboard.writeText('055ba25286712853d2a289d8d6b58befeed18db0fe7d28b55cb4d5f2660e1aa53b'); alert('Session ID скопирован');">
+      Скопировать Session ID
+    </button>
+    <br>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=055ba25286712853d2a289d8d6b58befeed18db0fe7d28b55cb4d5f2660e1aa53b" 
+         alt="QR Session">
   </div>
 
 </body>
